@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaRegStar } from "react-icons/fa";
+import { FaRegStar } from "react-icons/fa"; 
 
 
 const Book = ({ book }) => {
