@@ -41,7 +41,7 @@ const NavBar = () => {
                 <NavLink
                             to='/'
                             className={({ isActive }) => isActive ?
-                                'text-primar font-bold' : 'font-bold'}>
+                                'text-primary font-bold' : 'font-bold'}>
                             Home
                         </NavLink>
                         <NavLink
@@ -58,7 +58,7 @@ const NavBar = () => {
                         </NavLink>
                 </ul>
             </div>
-            <div className="navbar-end">
+            <div className="navbar-end gap-4">
                 <a className="btn text-white bg-[#23BE0A]">Sign In</a>
                 <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
             </div>
