@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
+import { FaRegStar } from "react-icons/fa";
+
 
 const Book = ({ book }) => {
-    const { id, image, bookName, mature, identity, tags,author ,rating} = book
+    const { id, image, bookName, mature, identity, tags,author ,rating ,types} = book
     return (
         <Link
            to={`/books/${id}`}
@@ -19,8 +21,8 @@ const Book = ({ book }) => {
                 <h2 className="card-title">{bookName}</h2>
                 <p className="font-semibold">By : {author}</p>
                 <div className="flex gap-48"> 
-                <p>fiction</p>
-                 <p>{rating}</p>
+                <p>{types}</p>
+                 <p className="flex gap-2">{rating} <FaRegStar className="mt-1"/></p>
                 </div>
             </div>
         </Link>
