@@ -58,7 +58,7 @@ const NavBar = () => {
                         </NavLink>
                 </ul>
             </div>
-            <div className="navbar-end gap-4">
+            <div className="navbar-end lg:gap-4">
                 <a className="btn text-white bg-[#23BE0A]">Sign In</a>
                 <a className="btn text-white bg-[#59C6D2]">Sign Up</a>
             </div>

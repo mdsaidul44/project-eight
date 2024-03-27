@@ -4,11 +4,11 @@ import Book from "../Book/Book";
 
 const Home = () => {
     const books = useLoaderData()
-    console.log(books)
+    // console.log(books)
     return (
         <div>
             <div className="lg:flex justify-between lg:p-12 rounded-2xl  bg-slate-100 lg:m-14 lg:h-96">
-                <div className="lg:p-12 ml-8">
+                <div className="lg:p-12 lg:ml-8">
                     <h1 className="text-6xl font-bold">Books to freshen up your bookshelf</h1>
                     <NavLink
                     to='/listed'> 

@@ -1,6 +1,6 @@
  
 import { NavLink, useLoaderData, useParams } from "react-router-dom";  
-import { getStoredBookData, saveBookData } from "../Utility/Book"; 
+import {  getStoredBookData, saveBookData } from "../Utility/Book"; 
 import { toast } from "react-toastify";
 
 const BookDetails = () => {
@@ -14,20 +14,25 @@ const BookDetails = () => {
          saveBookData(IdInt)
     }
 
-    const handleWishListBook= () =>{  
-        const storedBookData = getStoredBookData()
-        const exists = storedBookData.filter(book=> book === id)
+    const handleWishListBook= () =>{   
+        const getBook = getStoredBookData()
+        console.log(getBook)
+        const exists = getBook.filter(book=> book === id)
         if(exists){ 
             return toast.success('WishList book successfully')
-        } 
+        }
+        getBook.push(id)
+        localStorage.setItem('read-book', JSON.stringify(getBook))  
+        toast.error('already added')
+        console.log(getBook,IdInt)
     }
     return (
         <div className="hero min-h-screen">
             <div className="hero-content flex-col lg:flex-row">
                 <div>
-                <img src={image} className="max-w-sm w-[1000px] h-[450px] rounded-lg shadow-2xl" />
+                <img src={image} className="max-w-sm lg:w-[1000px] lg:h-[450px] rounded-lg shadow-2xl" />
                 </div>
-                <div className="p-10">
+                <div className="lg:p-10">
                     <h1 className="text-5xl font-bold">{bookName}</h1>
                     <p className="font-bold my-5">By :  {author}</p>
                     <hr />
@@ -58,7 +63,7 @@ const BookDetails = () => {
                         </div>
                     </div>
  
-                   <NavLink> <button onClick={() => handleReadBook(id)} className="btn mr-6">Read</button></NavLink>
+                   <NavLink > <button onClick={() => handleReadBook(id)} className="btn mr-6">Read</button></NavLink>
                    <NavLink><button onClick={() => handleWishListBook(id)} className="btn  text-white bg-[#59C6D2]">WishList</button></NavLink>
                    
                 </div>
