@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom";
 import { FaRegStar } from "react-icons/fa"; 
+import PropTypes from 'prop-types';
 
 
 const Book = ({ book }) => {
-    const { id, image, bookName, mature, identity, tags,author ,rating ,types} = book
+    const { id, image, bookName, tags,author ,rating ,types} = book
     return (
         <Link
            to={`/books/${id}`}
@@ -29,4 +30,7 @@ const Book = ({ book }) => {
     );
 };
 
+Book.propTypes ={
+    book: PropTypes.func
+}
 export default Book;

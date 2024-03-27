@@ -1,6 +1,6 @@
  
 import { NavLink, useLoaderData, useParams } from "react-router-dom";  
-import { saveBookData } from "../Utility/Book";
+import { getStoredBookData, saveBookData } from "../Utility/Book"; 
 import { toast } from "react-toastify";
 
 const BookDetails = () => {
@@ -10,12 +10,16 @@ const BookDetails = () => {
     const data = booksData.find(book => book.id == IdInt)
     const { bookName, author, bookReview, image, publisher, tags, totalPages, yearOfPublishing, rating,types } = data
 
-    const handleReadBook = (id) =>{
-         saveBookData(id)
+    const handleReadBook = () =>{
+         saveBookData(IdInt)
     }
 
-    const handleWishListBook= () =>{ 
-        
+    const handleWishListBook= () =>{  
+        const storedBookData = getStoredBookData()
+        const exists = storedBookData.filter(book=> book === id)
+        if(exists){ 
+            return toast.success('WishList book successfully')
+        } 
     }
     return (
         <div className="hero min-h-screen">
@@ -55,7 +59,7 @@ const BookDetails = () => {
                     </div>
  
                    <NavLink> <button onClick={() => handleReadBook(id)} className="btn mr-6">Read</button></NavLink>
-                   <NavLink><button onClick={() => handleWishListBook()} className="btn  text-white bg-[#59C6D2]">WishList</button></NavLink>
+                   <NavLink><button onClick={() => handleWishListBook(id)} className="btn  text-white bg-[#59C6D2]">WishList</button></NavLink>
                    
                 </div>
             </div>  
