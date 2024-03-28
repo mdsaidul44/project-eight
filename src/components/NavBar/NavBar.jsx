@@ -32,6 +32,18 @@ const NavBar = () => {
                                 'text-primary font-bold' : 'font-bold'}>
                            Pages to Read
                         </NavLink>
+                        <NavLink
+                            to='/about'
+                            className={({ isActive }) => isActive ?
+                                'text-primary font-bold' : 'font-bold'}>
+                            About
+                        </NavLink>
+                        <NavLink
+                            to='/contact'
+                            className={({ isActive }) => isActive ?
+                                'text-primary font-bold' : 'font-bold'}>
+                           Contact
+                        </NavLink>
                     </ul>
                 </div>
                 <Link className="btn btn-ghost text-2xl font-bold ">Book Vibe</Link>
