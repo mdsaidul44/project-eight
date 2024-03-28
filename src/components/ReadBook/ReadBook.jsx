@@ -1,6 +1,6 @@
 import { CiLocationOn } from "react-icons/ci";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
-import { MdOutlineContactPage } from "react-icons/md"; 
+import { MdOutlineContactPage } from "react-icons/md";  
 import { PropTypes } from 'prop-types';
 
 

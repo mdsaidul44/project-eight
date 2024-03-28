@@ -1,8 +1,7 @@
  
 import { NavLink, useLoaderData, useParams } from "react-router-dom";  
 import {  getStoredBookData, saveBookData } from "../Utility/Book"; 
-import { toast } from "react-toastify";
-import ReadBook from "../ReadBook/ReadBook";
+import { toast } from "react-toastify"; 
 
 const BookDetails = () => {
     const booksData = useLoaderData()

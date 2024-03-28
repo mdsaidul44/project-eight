@@ -1,5 +1,5 @@
 
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts'; 
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';  
 const Pages = () => { 
   const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
@@ -67,6 +67,7 @@ const TriangleBar = (props) => {
     </BarChart>
     </div>
   );
-};
+}; 
+
 
 export default Pages;

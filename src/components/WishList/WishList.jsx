@@ -1,11 +1,12 @@
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
 import { CiLocationOn } from "react-icons/ci";
 import { MdOutlineContactPage } from "react-icons/md";
+import { PropTypes } from 'prop-types';
 
  
 
 const WishList = ({book}) => {
-    const {bookName,id,publisher,totalPages,image,yearOfPublishing,tags,rating,types,author} = book;
+    const {bookName,publisher,totalPages,image,yearOfPublishing,tags,rating,types,author} = book;
     return (
        <div 
         className="border lg:mx-10">
@@ -41,5 +42,7 @@ const WishList = ({book}) => {
         </div>
     );
 };
-
+ WishList.propTypes={
+    book:PropTypes.func
+ }
 export default WishList;
