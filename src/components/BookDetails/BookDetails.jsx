@@ -2,6 +2,7 @@
 import { NavLink, useLoaderData, useParams } from "react-router-dom";  
 import {  getStoredBookData, saveBookData } from "../Utility/Book"; 
 import { toast } from "react-toastify";
+import ReadBook from "../ReadBook/ReadBook";
 
 const BookDetails = () => {
     const booksData = useLoaderData()
@@ -12,18 +13,19 @@ const BookDetails = () => {
 
     const handleReadBook = () =>{
          saveBookData(IdInt)
+         console.log(IdInt)
     }
 
     const handleWishListBook= () =>{   
-        const getBook = getStoredBookData()
+        const getBook = getStoredBookData('wish-list')
         console.log(getBook)
-        const exists = getBook.filter(book=> book === id)
+        const exists = getBook.find(book=> book === id)
         if(exists){ 
-            return toast.success('WishList book successfully')
+            return toast.error('already added')
         }
         getBook.push(id)
-        localStorage.setItem('read-book', JSON.stringify(getBook))  
-        toast.error('already added')
+        localStorage.setItem('wish-list', JSON.stringify(data))   
+        toast.success('WishList book successfully')
         console.log(getBook,IdInt)
     }
     return (

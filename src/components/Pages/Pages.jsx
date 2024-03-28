@@ -1,7 +1,9 @@
-import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts';
-const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
 
-const data = [
+import { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid } from 'recharts'; 
+const Pages = () => { 
+  const colors = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', 'red', 'pink'];
+
+  const data = [
     {
       name: 'Page A',
       uv: 4000,
@@ -19,26 +21,31 @@ const data = [
       uv: 2000,
       pv: 9800,
       amt: 2290,
-    }
+    },
+    {
+      name: 'Page D',
+      uv: 2780,
+      pv: 3908,
+      amt: 2000,
+    }, 
   ];
-  const getPath = (x, y, width, height) => {
-    return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
+const getPath = (x, y, width, height) => {
+  return `M${x},${y + height}C${x + width / 3},${y + height} ${x + width / 2},${y + height / 3}
     ${x + width / 2}, ${y}
     C${x + width / 2},${y + height / 3} ${x + (2 * width) / 3},${y + height} ${x + width}, ${y + height}
     Z`;
-  };
-  const TriangleBar = (props) => {
+};
+const TriangleBar = (props) => {
   const { fill, x, y, width, height } = props;
 
   return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
 };
 
-const Pages = () => { 
-  
 
-    return (
-        <div>
-            <BarChart
+  return (
+    
+    <div className=' mt-20 ml-96'> 
+          <BarChart
       width={500}
       height={300}
       data={data}
@@ -58,8 +65,8 @@ const Pages = () => {
         ))}
       </Bar>
     </BarChart>
-        </div>
-    );
+    </div>
+  );
 };
-  
+
 export default Pages;

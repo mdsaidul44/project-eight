@@ -1,17 +1,13 @@
-import { CiLocationOn } from "react-icons/ci";
 import { AiOutlineUsergroupAdd } from "react-icons/ai";
-import { MdOutlineContactPage } from "react-icons/md"; 
-import { PropTypes } from 'prop-types';
+import { CiLocationOn } from "react-icons/ci";
+import { MdOutlineContactPage } from "react-icons/md";
 
+ 
 
-
-
-const ReadBook = ({ book }) => {
-    const { bookName, image, author, rating, tags, types, publisher, totalPages, yearOfPublishing } = book;
-    // console.log(book)
-
+const WishList = ({book}) => {
+    const {bookName,id,publisher,totalPages,image,yearOfPublishing,tags,rating,types,author} = book;
     return (
-        <div 
+       <div 
         className="border lg:mx-10">
             <div className="hero-content flex-col lg:gap-x-24 lg:m-10 lg:flex-row">
                 <img src={image} className=" lg:w-[200px] h-[200px] rounded-lg shadow-2xl" />
@@ -45,7 +41,5 @@ const ReadBook = ({ book }) => {
         </div>
     );
 };
-ReadBook.propTypes ={
-    book:PropTypes.object
-}
-export default ReadBook;
+
+export default WishList;
